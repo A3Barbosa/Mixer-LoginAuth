@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <title>21 Savage Fan Site</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container" id="header">
+
+    <div class="page-header text-center">
+        <h1><span class="fa fa-paint-brush"></span> Mixer</h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+  </div>
+
+  <h3>Start Here</h3>
+  <form action="/mixing" method="POST">
+    <input type="color" value="" name ="firstColor">
+    <input class="hidden" type="color" value="" name="secondColor">
+    <input class="hidden" type="color" value="" name="thirdColor">
+    <button type="submit">Click</button>
+  </form>
+  
+ <div>
+   <div class="col-sm-6">
+    <h3>The Color Table:</h3>
+    <ul class="mix">
+    <% for(var i=0; i <mixing.length; i++) {%>
+      <li class="mixing">
+          <div style="background: <%= mixing[i].firstColor %>"><%= mixing[i].firstColor%></div>
+          <input type="color" value="" name="secondColor">
+          <div style="background: <%= mixing[i].secondColor %>"><%= mixing[i].secondColor%></div>
+          <button class="blend"> Mix The Color's</button>
+          <div style="background: <%= mixing[i].thirdColor %>"><%= mixing[i].
+          thirdColor%></div>
+         
+      </li>
+    <% } %>
+    </ul>
+   </div>
+ </div> 
+  
+
+<script src="main.js"></script>
+
+</body>
+</html>
